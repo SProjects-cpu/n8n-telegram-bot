@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: n8n-telegram-bot
+    runtime: docker
+    repo: https://github.com/SProjects-cpu/n8n-telegram-bot
+    branch: main
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: N8N_PORT
+        value: 10000
+      - key: N8N_PROTOCOL
+        value: https
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: GENERIC_TIMEZONE
+        value: America/New_York
+      - key: N8N_METRICS
+        value: true
+      - key: DB_TYPE
+        value: sqlite
+      - key: DB_SQLITE_VACUUM_ON_STARTUP
+        value: true
+      - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+        value: false
+      - key: N8N_VERSION_NOTIFICATIONS_ENABLED
+        value: false
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: false
+      - key: N8N_TRUST_PROXY
+        value: true
+      - key: N8N_USER_FOLDER
+        value: /data
+    disk:
+      name: n8n-data
+      mountPath: /data
+      sizeGB: 1
