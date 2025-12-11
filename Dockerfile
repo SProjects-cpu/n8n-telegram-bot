@@ -1,6 +1,6 @@
 FROM n8nio/n8n:latest
 
-# Switch to root to set up permissions
+# Run as root user to avoid permission issues with Railway volumes
 USER root
 
 # Set environment variables
@@ -28,12 +28,6 @@ ENV N8N_TRUST_PROXY=true
 
 # Expose Railway port
 EXPOSE 8080
-
-# Create data directory and set permissions for node user
-RUN mkdir -p /data && chown -R node:node /data
-
-# Switch back to node user
-USER node
 
 # Set volume for persistent data
 VOLUME /data
