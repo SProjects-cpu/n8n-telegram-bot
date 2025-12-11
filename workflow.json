@@ -1,0 +1,33 @@
+{
+  "name": "Telegram LinkedIn Lead Scraper",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message",
+          "callback_query"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -600,
+        200
+      ],
+      "id": "telegram-trigger-main",
+      "name": "Telegram Trigger",
+      "webhookId": "telegram-lead-scraper-main",
+      "credentials": {
+        "telegramApi": {
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "connections": {},
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
