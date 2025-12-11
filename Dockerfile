@@ -26,8 +26,8 @@ ENV N8N_BASIC_AUTH_ACTIVE=false
 # Trust proxy for Railway
 ENV N8N_TRUST_PROXY=true
 
-# Expose Railway port
-EXPOSE 8080
+# Expose port (Railway uses 8080, Render uses 10000)
+EXPOSE 8080 10000
 
 # Set volume for persistent data
 VOLUME /data
